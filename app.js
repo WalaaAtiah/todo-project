@@ -2,7 +2,9 @@
 function userInformation(){
 var name =prompt("Enter your name");
 var gender  =prompt("Enter your gender (male or female)");
-
+if (gender !="male" && gender != "female"){
+  alert("the gender is not male or female ")
+}
 while(1){
     var age  =prompt("Enter your age ");
     if (age<=0){
@@ -32,35 +34,54 @@ if (confirming==0){
 }
 
 //Phase 2 Requirements:
-function yesNoQuestions (){
-  let arr=[];  
+
+function job(){
   let jobQuestion =prompt("do you have a job?");
   if(jobQuestion ==""){
-arr.push("invalid")
-  }else {
-    arr.push (jobQuestion)
-  }
+    return "invalid";
+}else {
+  return jobQuestion;
+}
+}
+function marry(){
   let marryQuastion =prompt("Are you married?");
   if(marryQuastion ==""){
-arr.push("invalid")
-  }else {
-    arr.push (marryQuastion)
-  }
+    return "invalid";
+}else {
+  return marryQuastion;
+}
+}
+function children(){
   let childrenQuastion =prompt("Do You Have Children?");
   if(childrenQuastion ==""){
-arr.push("invalid")
-  }else {
-    arr.push (childrenQuastion)
-  }
+    return "invalid";
+}else {
+  return childrenQuastion;
+}
+}
+function car(){
   let carQuastion =prompt("do you have car?");
   if(carQuastion ==""){
-arr.push("invalid")
-  }else {
-    arr.push (carQuastion)
+    return "invalid";
+}else {
+  return carQuastion;
+}
+}
+
+
+
+
+function yesNoQuestions (){
+  let arr=[];  
+    arr.push (job())
+    arr.push (marry())
+    arr.push (children())
+    arr.push (car())
+console.log (arr)
   }
   
 
-return arr;
-}
+
+
 userInformation();
-console.log (yesNoQuestions());
+yesNoQuestions();
